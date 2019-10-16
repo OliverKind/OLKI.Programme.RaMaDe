@@ -10,7 +10,7 @@ These instructions will get you a copy of the project up and running on your loc
 * .NET Framework 4 or higher
 
 > To compile the source code you need also the following repositories
--- None --
+> * -- None --
 
 ### Installing
 
@@ -24,8 +24,9 @@ You can download the source code or use a installer of the last release, if you 
 ## Usage
 
 Update the refereces to the additional required repositories
+```C#
 -- None --
-
+```
 ## Contributing
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on my code of conduct, and the process for submitting pull requests to me.
