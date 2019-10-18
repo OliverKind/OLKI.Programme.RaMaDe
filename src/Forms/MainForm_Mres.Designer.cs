@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OLKI.Programme.RaMaDe.src {
+namespace OLKI.Programme.RaMaDe.src.Forms {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace OLKI.Programme.RaMaDe.src {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("OLKI.Programme.RaMaDe.src.MainForm_Mres", typeof(MainForm_Mres).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("OLKI.Programme.RaMaDe.src.Forms.MainForm_Mres", typeof(MainForm_Mres).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
