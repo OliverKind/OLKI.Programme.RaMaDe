@@ -1,4 +1,4 @@
-;NSIS Installer for RaMaDe 1.0.0.1
+;NSIS Installer for RaMaDe 1.0.1.2
 ;Using Modern Interface, Setup-Options, etc.
 ;Written by Oliver Kind
 
@@ -21,7 +21,7 @@
 ;Defining
 
   !define AppName          'RaMaDe'
-  !define Version          '1.0.0.1'
+  !define Version          '1.0.1.2'
   !define Company          'OLKI-Software'
   !define Comments         'Ein Programm das RAW-Dateien löscht zu denen keine Bilddatei vorhanden ist'
   !define Copyright        '2019 - Oliver Kind'

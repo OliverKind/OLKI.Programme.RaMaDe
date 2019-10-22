@@ -132,9 +132,7 @@
     <None Include="Properties\Resources\Icon original Files\delete.ico" />
     <None Include="Properties\Resources\Icon original Files\generic_picture.ico" />
     <None Include="Properties\Resources\Icon original Files\search.ico" />
-    <Content Include="Properties\Resources\RaMaDe.ico">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Properties\Resources\RaMaDe.ico" />
     <Content Include="Properties\Resources\RaMaDe.png" />
   </ItemGroup>
   <ItemGroup />
