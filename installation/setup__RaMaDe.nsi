@@ -109,7 +109,7 @@ Section ""
   File ".\..\bin\Release\RaMaDe.exe"
   File ".\..\bin\Release\${EulaFile}"
   File ".\..\bin\Release\${ReadmeFile}"
-  File ".\..\bin\Release\Properties\Resources\RaMaDe.ico"
+  File ".\..\RaMaDe.ico"
 
   SetOutPath "$INSTDIR\Licenses"
   File ".\..\bin\Release\licenses\LGPL-License.Txt"
