@@ -12,5 +12,12 @@ All notable changes to this project will be documented in this file.
 ### Fixed
 - N/A
 
+## [1.0.1.2] - 2019-10-27
+### Changed
+- Code and performance optimisation
+
+### Fixed
+- Case senstitivity removed
+
 ## [1.0.0.1] - 2019-10-16
 ### Initial release
