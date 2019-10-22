@@ -52,7 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="src\FileManager.cs" />
+    <Compile Include="src\clsFileManager.cs" />
     <Compile Include="src\Forms\frmAbout.cs">
       <SubType>Form</SubType>
     </Compile>
