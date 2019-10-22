@@ -46,10 +46,6 @@ namespace OLKI.Programme.RaMaDe.src.Forms
         /// Height offset for the exception log area, to create the right height weilhe show and hide this area and resice the form
         /// </summary>
         private const int EXCEPTION_AREA_HEIGHT_OFFSET = 6;
-        /// <summary>
-        /// Splitter for extensions
-        /// </summary>
-        //TODO: REMOVE private const char STRING_SPLIT = ',';
         #endregion
 
         #region Methods
@@ -58,7 +54,6 @@ namespace OLKI.Programme.RaMaDe.src.Forms
             InitializeComponent();
             this.txtFileExtensionCorresponding.Text = DEFAULT_EXTENSION_COMPARE;
             this.txtFileExtensionRaw.Text = DEFAULT_EXTENSION_RAW;
-            this.txtDirectroy.Text = @"C:\Users\00grigri\Desktop\Neuer Ordner"; //TODO: REMOVE
             this.DeleteExceptionAreaHide();
         }
 
@@ -94,9 +89,8 @@ namespace OLKI.Programme.RaMaDe.src.Forms
                 ExtensionsRaw = this.txtFileExtensionRaw.Text.ToLower(),
             };
             FileManger.DeleteException += new FileManager.DeleteExceptionEventHandler(this.FileManger_DelteException);
-            //TODO: REMOVE List<FileInfo> FilesToDelete = new List<FileInfo>();
-            //TODO: REMOVE int FilesDeleted = 0;
 
+            //Hide exception area if it is visible. Will be shown again if an exception occurs
             if (this.grbDeleteException.Visible == true) this.DeleteExceptionAreaHide();
 
             // Stop if directroy path is invalid or file did nox exists
@@ -106,7 +100,6 @@ namespace OLKI.Programme.RaMaDe.src.Forms
                 return;
             }
 
-            //TODO: REMOVE FilesToDelete = this.SearchForRawFilesToDelete(this.txtDirectroy.Text, this.txtFileExtensionCorresponding.Text, this.txtFileExtensionRaw.Text);
             FileManger.SearchForRawFilesToDelete(this.txtDirectroy.Text);
 
             // Stop if no files found
@@ -128,17 +121,6 @@ namespace OLKI.Programme.RaMaDe.src.Forms
                     Application.Exit();
                 }
             }
-            //TODO: REACTIVATE WITH CHANGES
-            /*
-            if (MessageBox.Show(string.Format(frmMain_Mres.btnDeleteRawFileClick__DeleteFiles_Message, new object[] { FilesToDelete.Count.ToString() }), string.Format(frmMain_Mres.btnDeleteRawFileClick__DeleteFiles_Caption, new object[] { FilesToDelete.Count }), MessageBoxButtons.YesNoCancel, MessageBoxIcon.Exclamation) == DialogResult.Yes)
-            {
-                FilesDeleted = this.DeletedFilesInList(FilesToDelete);
-                if (MessageBox.Show(string.Format(frmMain_Mres.btnDeleteRawFileClick__Finish_Message, new object[] { FilesDeleted, this.lsvDeleteException.Items.Count }), string.Format(frmMain_Mres.btnDeleteRawFileClick__Finish_Caption, new object[] { FilesToDelete.Count }), MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
-                {
-                    Application.Exit();
-                }
-            }
-            */
         }
 
         private void FileManger_DelteException(object sender, FileManager.ExceptionEventArgs e)
@@ -154,129 +136,6 @@ namespace OLKI.Programme.RaMaDe.src.Forms
             this.lsvDeleteException.Items.Add(ExceptionItem);
         }
 
-        //TODO: REMOVE
-        /*
-        /// <summary>
-        /// Search for RAW-Files the dont have an corresponding file and add them to telete list
-        /// </summary>
-        /// <param name="directroy">The relative or absolute path to the directory to search. This string is not case-sensitive.</param>
-        /// <param name="fileExtensionCorresponding">The extension of files to compare with</param>
-        /// <param name="fileExtensionRaw">The extension of raw files</param>
-        private List<FileInfo> SearchForRawFilesToDelete(string directroy, string fileExtensionCorresponding, string fileExtensionRaw)
-        {
-            List<FileInfo> FilesToDelete = new List<FileInfo>();
-
-            try
-            {
-                // Iterate to all files
-                FileInfo TempFileAll;   // FileInfo for all files
-                foreach (string FileItem in Directory.GetFiles(directroy))
-                {
-                    TempFileAll = new FileInfo(FileItem);
-
-                    // If file is an RAW-File, search for cooresponding file
-                    if (this.IsRawFile(TempFileAll, fileExtensionRaw))
-                    {
-                        // If ther is no corresponding file, add RAW-File to delete list
-                        if (!this.HasCorespondingFile(FileItem, fileExtensionCorresponding))
-                        {
-                            FilesToDelete.Add(TempFileAll);
-                        }
-                    }
-                }
-                return FilesToDelete;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(string.Format(frmMain_Mres.btnDirectoryClick__SearchException_Message, new object[] { ex.Message }), frmMain_Mres.btnDirectoryClick__SearchException_Caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return FilesToDelete;
-            }
-        }
-
-        /// <summary>
-        /// Check if the specified file is an raw file
-        /// </summary>
-        /// <param name="tempFileAll">File to chek if it is an raw file</param>
-        /// <param name="fileExtensionRaw">List of raw file extensions, sperated with comma</param>
-        /// <returns></returns>
-        private bool IsRawFile(FileInfo tempFileAll, string fileExtensionRaw)
-        {
-            foreach (string ExtensionItem in fileExtensionRaw.Split(STRING_SPLIT))
-            {
-                if (tempFileAll.Exists && tempFileAll.Extension == "." + ExtensionItem)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        /// <summary>
-        /// Check if an raw file has an coorespinding picture file
-        /// </summary>
-        /// <param name="checkFilePath">FullName path of the raw file to check if it has a corresponding picture file</param>
-        /// <param name="fileExtensionCorresponding">List of compare file extensions, sperated with comma</param>
-        /// <returns></returns>
-        private bool HasCorespondingFile(string checkFilePath, string fileExtensionCorresponding)
-        {
-            //return new FileInfo(System.IO.Path.GetDirectoryName(checkFilePath) + @"\" + System.IO.Path.GetFileNameWithoutExtension(checkFilePath) + "." + fileExtensionCorresponding).Exists;
-            foreach (string ExtensionItem in fileExtensionCorresponding.Split(STRING_SPLIT))
-            {
-                if (new FileInfo(System.IO.Path.GetDirectoryName(checkFilePath) + @"\" + System.IO.Path.GetFileNameWithoutExtension(checkFilePath) + "." + ExtensionItem).Exists)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        /// <summary>
-        /// Deletes the files, specified in a list
-        /// </summary>
-        /// <param name="fllesToDelete">List with files to delete</param>
-        /// <returns>The number of deleted files</returns>
-        private int DeletedFilesInList(List<FileInfo> fllesToDelete)
-        {
-            int FilesDeleted = 0;
-            try
-            {
-                foreach (FileInfo FileItem in fllesToDelete)
-                {
-                    if (this.DelteFile(FileItem)) FilesDeleted++;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(string.Format(frmMain_Mres.btnDirectoryClick__SearchException_Caption, new object[] { ex.Message }), frmMain_Mres.btnDirectoryClick__SearchException_Caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return FilesDeleted;
-        }
-
-        /// <summary>
-        /// Delete the specifies file. Add an new entry to exception lsitview if an exception was thrown
-        /// </summary>
-        /// <param name="path">File to delte</param>
-        /// <returns>True if delete of the file was sucessfull</returns>
-        private bool DelteFile(FileInfo file)
-        {
-            try
-            {
-                File.Delete(file.FullName);
-                return true;
-            }
-            catch (Exception ex)
-            {
-                this.DeleteExceptionAreaShow();
-                ListViewItem ExceptionItem = new ListViewItem();
-                ExceptionItem.Tag = new object[] { file, ex.Message }; // Not used at this time
-                ExceptionItem.Text = file.Name;
-                ExceptionItem.SubItems.Add(ex.Message);
-
-                this.lsvDeleteException.Items.Add(ExceptionItem);
-                return false;
-            }
-        }
-        */
         /// <summary>
         /// Hides the the area, if it is visible, shows exception durting deleting files and clear listview
         /// </summary>

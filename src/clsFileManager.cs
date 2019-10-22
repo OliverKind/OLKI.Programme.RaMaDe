@@ -162,10 +162,8 @@ namespace OLKI.Programme.RaMaDe.src
             try
             {
                 // Iterate to all files and chek if it ist an RAW-File or an file to compare with
-                //TODO: REMOVE FileInfo CheckTempFile;   // File to check if it is an RAW-File an if should been deleted
                 foreach (FileInfo FileItem in new DirectoryInfo(directroy).GetFiles().OrderBy(f => f.Name))
                 {
-                    //CheckTempFile = new FileInfo(FileItem);
                     // Create file list of compare and RAW-Files.
                     // Witoud exception an in lower case chars to make it esasyer to compare
                     if (this.IsCompareFile(FileItem))
@@ -178,7 +176,6 @@ namespace OLKI.Programme.RaMaDe.src
                     }
                 }
                 // Remove every file from RAW-file list, that has an coresponding file
-                //TODO: REMOVE this._filesRaw = this._filesRaw.Except(this._filesCompare).ToList();
                 this._filesRawToDelete = this.GetNonComparedFiles(this._filesRaw, this._filesCompare);
             }
             catch (Exception ex)
@@ -224,10 +221,6 @@ namespace OLKI.Programme.RaMaDe.src
                 }
             }
             return FileNotCompare;
-            //TODO: Remove 
-            //return true;
-            //this._filesCompare.Add(FileItem.DirectoryName + @"\" + System.IO.Path.GetFileNameWithoutExtension(FileItem.FullName).ToLower());
-            //return filesRaw.Except(filesCompare).ToList();
         }
 
         /// <summary>
@@ -282,16 +275,6 @@ namespace OLKI.Programme.RaMaDe.src
                 {
                     DeleteException(this, new ExceptionEventArgs(file, ex));
                 }
-                //TODO: REMOVE
-                /*
-                this.DeleteExceptionAreaShow();
-                ListViewItem ExceptionItem = new ListViewItem();
-                ExceptionItem.Tag = new object[] { file, ex.Message }; // Not used at this time
-                ExceptionItem.Text = file.Name;
-                ExceptionItem.SubItems.Add(ex.Message);
-
-                this.lsvDeleteException.Items.Add(ExceptionItem);
-                */
                 return false;
             }
         }
