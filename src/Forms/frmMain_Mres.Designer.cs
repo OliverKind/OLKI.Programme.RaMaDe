@@ -22,14 +22,14 @@ namespace OLKI.Programme.RaMaDe.src.Forms {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class MainForm_Mres {
+    internal class frmMain_Mres {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal MainForm_Mres() {
+        internal frmMain_Mres() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace OLKI.Programme.RaMaDe.src.Forms {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("OLKI.Programme.RaMaDe.src.Forms.MainForm_Mres", typeof(MainForm_Mres).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("OLKI.Programme.RaMaDe.src.Forms.frmMain_Mres", typeof(frmMain_Mres).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -70,7 +70,9 @@ namespace OLKI.Programme.RaMaDe.src.Forms {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die {0} Datteien zum löschen gefunden. Möchte Sie diese jetzt löschen? ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die {0} Datteien zum löschen gefunden. Möchte Sie diese jetzt löschen?
+        ///
+        ///ACHTUNG: Die Dateien werden gelöscht und nicht in den Papierkorb verschoben. Dieser Vorgang kann nicht rückgängig gemacht werden. ähnelt.
         /// </summary>
         internal static string btnDeleteRawFileClick__DeleteFiles_Message {
             get {

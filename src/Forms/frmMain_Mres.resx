@@ -121,7 +121,9 @@
     <value>{0} Dateien löschen?</value>
   </data>
   <data name="btnDeleteRawFileClick__DeleteFiles_Message" xml:space="preserve">
-    <value>{0} Datteien zum löschen gefunden. Möchte Sie diese jetzt löschen?</value>
+    <value>{0} Datteien zum löschen gefunden. Möchte Sie diese jetzt löschen?
+
+ACHTUNG: Die Dateien werden gelöscht und nicht in den Papierkorb verschoben. Dieser Vorgang kann nicht rückgängig gemacht werden.</value>
   </data>
   <data name="btnDeleteRawFileClick__Finish_Caption" xml:space="preserve">
     <value>{0} Dateien löschen.</value>

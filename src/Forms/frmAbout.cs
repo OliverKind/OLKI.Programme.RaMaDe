@@ -26,12 +26,12 @@ using System;
 using System.Reflection;
 using System.Windows.Forms;
 
-namespace OLKI.Programme.RaMaDe
+namespace OLKI.Programme.RaMaDe.src.Forms
 {
     /// <summary>
     /// A form to show informations about the application
     /// </summary>
-    public partial class AboutForm : Form
+    public partial class About : Form
     {
         #region Constants
         /// <summary>
@@ -122,7 +122,7 @@ namespace OLKI.Programme.RaMaDe
         #endregion
 
         #region Methods
-        internal AboutForm()
+        internal About()
         {
             InitializeComponent();
             this.Text = String.Format(this.Text, this.AssemblyTitle);
@@ -137,6 +137,7 @@ namespace OLKI.Programme.RaMaDe
         {
             License LicenseForm = new License();
             LicenseForm.ShowDialog(this);
+            LicenseForm.Dispose();
         }
         #endregion    
      }

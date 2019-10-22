@@ -1,6 +1,6 @@
-﻿namespace OLKI.Programme.RaMaDe
+﻿namespace OLKI.Programme.RaMaDe.src.Forms
 {
-    partial class MainForm
+    partial class Main
     {
         /// <summary>
         /// Erforderliche Designervariable.
@@ -28,7 +28,7 @@
         /// </summary>
 		private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.lblDirectroy = new System.Windows.Forms.Label();
             this.txtDirectroy = new System.Windows.Forms.TextBox();
             this.btnDirectory = new System.Windows.Forms.Button();

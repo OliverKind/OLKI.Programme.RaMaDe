@@ -33,11 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>RaMaDe.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>OLKI.Programme.RaMaDe.Program</StartupObject>
+    <StartupObject>OLKI.Programme.RaMaDe.src.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -53,43 +52,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="src\frmAboutForm.cs">
+    <Compile Include="src\FileManager.cs" />
+    <Compile Include="src\Forms\frmAbout.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\frmAboutForm.Designer.cs">
-      <DependentUpon>frmAboutForm.cs</DependentUpon>
+    <Compile Include="src\Forms\frmAbout.Designer.cs">
+      <DependentUpon>frmAbout.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\frmLicense.cs">
+    <Compile Include="src\Forms\frmLicense.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\frmLicense.Designer.cs">
+    <Compile Include="src\Forms\frmLicense.Designer.cs">
       <DependentUpon>frmLicense.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\frmMainForm.cs">
+    <Compile Include="src\Forms\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\frmMainForm.Designer.cs">
-      <DependentUpon>frmMainForm.cs</DependentUpon>
+    <Compile Include="src\Forms\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\MainForm_Mres.Designer.cs">
+    <Compile Include="src\Forms\frmMain_Mres.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MainForm_Mres.resx</DependentUpon>
+      <DependentUpon>frmMain_Mres.resx</DependentUpon>
     </Compile>
     <Compile Include="src\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="src\frmAboutForm.resx">
-      <DependentUpon>frmAboutForm.cs</DependentUpon>
+    <EmbeddedResource Include="src\Forms\frmAbout.resx">
+      <DependentUpon>frmAbout.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\frmLicense.resx">
+    <EmbeddedResource Include="src\Forms\frmLicense.resx">
       <DependentUpon>frmLicense.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\frmMainForm.resx">
-      <DependentUpon>frmMainForm.cs</DependentUpon>
+    <EmbeddedResource Include="src\Forms\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\MainForm_Mres.resx">
+    <EmbeddedResource Include="src\Forms\frmMain_Mres.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>MainForm_Mres.Designer.cs</LastGenOutput>
+      <LastGenOutput>frmMain_Mres.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -119,6 +119,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="RaMaDe.ico" />
     <Content Include="ReadMe.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

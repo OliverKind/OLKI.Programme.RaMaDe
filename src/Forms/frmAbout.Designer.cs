@@ -1,6 +1,6 @@
-﻿namespace OLKI.Programme.RaMaDe
+﻿namespace OLKI.Programme.RaMaDe.src.Forms
 {
-    partial class AboutForm
+    partial class About
     {
         /// <summary>
         /// Erforderliche Designervariable.
@@ -27,7 +27,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(About));
             this.btnClose = new System.Windows.Forms.Button();
             this.lblProductName = new System.Windows.Forms.Label();
             this.tblLayoutPanel = new System.Windows.Forms.TableLayoutPanel();

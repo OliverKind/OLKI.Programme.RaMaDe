@@ -22,19 +22,18 @@
  * 
  * */
 
-using OLKI.Programme.RaMaDe.src;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 
-namespace OLKI.Programme.RaMaDe
+namespace OLKI.Programme.RaMaDe.src.Forms
 {
     /// <summary>
     /// Application main form
     /// </summary>
-    public partial class MainForm : Form
+    public partial class Main : Form
     {
+        #region Constants
         /// <summary>
         /// Default text in Textfield for comapre file extensions
         /// </summary>
@@ -42,7 +41,7 @@ namespace OLKI.Programme.RaMaDe
         /// <summary>
         /// Default text in Textfield for raw-File identification
         /// </summary>
-        private const string DEFAULT_EXTENSION_RAW = "3fr,arw,cr2,cr3,crw,cs1,cs16,cs4,dcr,dcs,dng,dng,dng,dng,dng,erf,fff,iiq,iiq,kdc,mdc,mef,mfw,mrw,nef,nrw,orf,ori,pef,raf,raw,raw,raw,rw2,rwl,sr2,srf,srw,tif,x3f";
+        private const string DEFAULT_EXTENSION_RAW = "3fr,arw,cr2,cr3,crw,cs1,cs16,cs4,dcr,dcs,dng,erf,fff,iiq,kdc,mdc,mef,mfw,mrw,nef,nrw,orf,ori,pef,raf,raw,rw2,rwl,sr2,srf,srw,tif,x3f";
         /// <summary>
         /// Height offset for the exception log area, to create the right height weilhe show and hide this area and resice the form
         /// </summary>
@@ -50,59 +49,70 @@ namespace OLKI.Programme.RaMaDe
         /// <summary>
         /// Splitter for extensions
         /// </summary>
-        private const char STRING_SPLIT = ',';
+        //TODO: REMOVE private const char STRING_SPLIT = ',';
+        #endregion
 
         #region Methods
-        public MainForm()
+        public Main()
         {
             InitializeComponent();
             this.txtFileExtensionCorresponding.Text = DEFAULT_EXTENSION_COMPARE;
             this.txtFileExtensionRaw.Text = DEFAULT_EXTENSION_RAW;
-
+            this.txtDirectroy.Text = @"C:\Users\00grigri\Desktop\Neuer Ordner"; //TODO: REMOVE
             this.DeleteExceptionAreaHide();
         }
 
-        void MainForm_HelpButtonClicked(object sender, System.ComponentModel.CancelEventArgs e)
+        private void MainForm_HelpButtonClicked(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            //MessageBox.Show("Autor: Oliver Kind");
-            new AboutForm().ShowDialog(this);
-            //frmAboutForm AboutForm = new frmAboutForm();
+            About AboutForm = new About();
+            AboutForm.ShowDialog(this);
+            AboutForm.Dispose();
             e.Cancel = true;
         }
 
-        void btnDirectory_Click(object sender, EventArgs e)
+        private void btnDirectory_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog FolderBrowser = new FolderBrowserDialog();
-            FolderBrowser.Description = MainForm_Mres.btnDirectoryClick__FolderBrowser_Description;
-            FolderBrowser.SelectedPath = this.txtDirectroy.Text;
-            FolderBrowser.ShowNewFolderButton = false;
+            FolderBrowserDialog FolderBrowser = new FolderBrowserDialog
+            {
+                Description = frmMain_Mres.btnDirectoryClick__FolderBrowser_Description,
+                SelectedPath = this.txtDirectroy.Text,
+                ShowNewFolderButton = false
+            };
 
             if (FolderBrowser.ShowDialog(this) == DialogResult.OK)
             {
                 this.txtDirectroy.Text = FolderBrowser.SelectedPath;
             }
+            FolderBrowser.Dispose();
         }
 
-        void btnDeleteRawFile_Click(object sender, EventArgs e)
+        private void btnDeleteRawFile_Click(object sender, EventArgs e)
         {
-            List<FileInfo> FilesToDelete = new List<FileInfo>();
-            int FilesDeleted = 0;
+            src.FileManager FileManger = new FileManager
+            {
+                ExtensionsCompare = this.txtFileExtensionCorresponding.Text.ToLower(),
+                ExtensionsRaw = this.txtFileExtensionRaw.Text.ToLower(),
+            };
+            FileManger.DeleteException += new FileManager.DeleteExceptionEventHandler(this.FileManger_DelteException);
+            //TODO: REMOVE List<FileInfo> FilesToDelete = new List<FileInfo>();
+            //TODO: REMOVE int FilesDeleted = 0;
 
             if (this.grbDeleteException.Visible == true) this.DeleteExceptionAreaHide();
 
             // Stop if directroy path is invalid or file did nox exists
             if (string.IsNullOrEmpty(this.txtDirectroy.Text) || !new DirectoryInfo(this.txtDirectroy.Text).Exists)
             {
-                MessageBox.Show(MainForm_Mres.btnDeleteRawFileClick__NoDirectroy_Message, MainForm_Mres.btnDeleteRawFileClick__NoDirectroy_Caption, MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show(frmMain_Mres.btnDeleteRawFileClick__NoDirectroy_Message, frmMain_Mres.btnDeleteRawFileClick__NoDirectroy_Caption, MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 return;
             }
 
-            FilesToDelete = this.SearchForRawFilesToDelete(this.txtDirectroy.Text, this.txtFileExtensionCorresponding.Text, this.txtFileExtensionRaw.Text);
+            //TODO: REMOVE FilesToDelete = this.SearchForRawFilesToDelete(this.txtDirectroy.Text, this.txtFileExtensionCorresponding.Text, this.txtFileExtensionRaw.Text);
+            FileManger.SearchForRawFilesToDelete(this.txtDirectroy.Text);
 
             // Stop if no files found
-            if (FilesToDelete.Count == 0)
+            if (FileManger.FilesRawToDelete.Count == 0)
             {
-                if (MessageBox.Show(MainForm_Mres.btnDeleteRawFileClick__NoFiles_Message, MainForm_Mres.btnDeleteRawFileClick__NoFiles_Caption, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                if (MessageBox.Show(frmMain_Mres.btnDeleteRawFileClick__NoFiles_Message, frmMain_Mres.btnDeleteRawFileClick__NoFiles_Caption, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
                     Application.Exit();
                 }
@@ -110,16 +120,42 @@ namespace OLKI.Programme.RaMaDe
             }
 
             // Delete files withoud corresponding file
-            if (MessageBox.Show(string.Format(MainForm_Mres.btnDeleteRawFileClick__DeleteFiles_Message, new object[] { FilesToDelete.Count.ToString() }), string.Format(MainForm_Mres.btnDeleteRawFileClick__DeleteFiles_Caption, new object[] { FilesToDelete.Count }), MessageBoxButtons.YesNoCancel, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+            if (MessageBox.Show(string.Format(frmMain_Mres.btnDeleteRawFileClick__DeleteFiles_Message, new object[] { FileManger.FilesRawToDelete.Count.ToString() }), string.Format(frmMain_Mres.btnDeleteRawFileClick__DeleteFiles_Caption, new object[] { FileManger.FilesRawToDelete.Count }), MessageBoxButtons.YesNoCancel, MessageBoxIcon.Exclamation) == DialogResult.Yes)
             {
-                FilesDeleted = this.DeletedFilesInList(FilesToDelete);
-                if (MessageBox.Show(string.Format(MainForm_Mres.btnDeleteRawFileClick__Finish_Message, new object[] { FilesDeleted, this.lsvDeleteException.Items.Count }), string.Format(MainForm_Mres.btnDeleteRawFileClick__Finish_Caption, new object[] { FilesToDelete.Count }), MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                FileManger.DelteNonCompareFiles();
+                if (MessageBox.Show(string.Format(frmMain_Mres.btnDeleteRawFileClick__Finish_Message, new object[] { FileManger.DeltedFiles, this.lsvDeleteException.Items.Count }), string.Format(frmMain_Mres.btnDeleteRawFileClick__Finish_Caption, new object[] { FileManger.DeltedFiles }), MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
                     Application.Exit();
                 }
             }
+            //TODO: REACTIVATE WITH CHANGES
+            /*
+            if (MessageBox.Show(string.Format(frmMain_Mres.btnDeleteRawFileClick__DeleteFiles_Message, new object[] { FilesToDelete.Count.ToString() }), string.Format(frmMain_Mres.btnDeleteRawFileClick__DeleteFiles_Caption, new object[] { FilesToDelete.Count }), MessageBoxButtons.YesNoCancel, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+            {
+                FilesDeleted = this.DeletedFilesInList(FilesToDelete);
+                if (MessageBox.Show(string.Format(frmMain_Mres.btnDeleteRawFileClick__Finish_Message, new object[] { FilesDeleted, this.lsvDeleteException.Items.Count }), string.Format(frmMain_Mres.btnDeleteRawFileClick__Finish_Caption, new object[] { FilesToDelete.Count }), MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                {
+                    Application.Exit();
+                }
+            }
+            */
         }
 
+        private void FileManger_DelteException(object sender, FileManager.ExceptionEventArgs e)
+        {
+            if (!this.grbDeleteException.Visible) this.DeleteExceptionAreaShow();
+
+            ListViewItem ExceptionItem = new ListViewItem
+            {
+                Tag = e, // Not used at this time
+                Text = e.File.Name
+            };
+            ExceptionItem.SubItems.Add(e.Exception.Message);
+            this.lsvDeleteException.Items.Add(ExceptionItem);
+        }
+
+        //TODO: REMOVE
+        /*
         /// <summary>
         /// Search for RAW-Files the dont have an corresponding file and add them to telete list
         /// </summary>
@@ -152,7 +188,7 @@ namespace OLKI.Programme.RaMaDe
             }
             catch (Exception ex)
             {
-                MessageBox.Show(string.Format(MainForm_Mres.btnDirectoryClick__SearchException_Message, new object[] { ex.Message }), MainForm_Mres.btnDirectoryClick__SearchException_Caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(string.Format(frmMain_Mres.btnDirectoryClick__SearchException_Message, new object[] { ex.Message }), frmMain_Mres.btnDirectoryClick__SearchException_Caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return FilesToDelete;
             }
         }
@@ -211,7 +247,7 @@ namespace OLKI.Programme.RaMaDe
             }
             catch (Exception ex)
             {
-                MessageBox.Show(string.Format(MainForm_Mres.btnDirectoryClick__SearchException_Caption, new object[] { ex.Message }), MainForm_Mres.btnDirectoryClick__SearchException_Caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(string.Format(frmMain_Mres.btnDirectoryClick__SearchException_Caption, new object[] { ex.Message }), frmMain_Mres.btnDirectoryClick__SearchException_Caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return FilesDeleted;
         }
@@ -240,25 +276,25 @@ namespace OLKI.Programme.RaMaDe
                 return false;
             }
         }
-
+        */
         /// <summary>
         /// Hides the the area, if it is visible, shows exception durting deleting files and clear listview
         /// </summary>
-        void DeleteExceptionAreaHide()
+        private void DeleteExceptionAreaHide()
         {
             this.grbDeleteException.Visible = false;
             this.lsvDeleteException.Items.Clear();
-            this.Height = this.Height - (this.grbDeleteException.Height + EXCEPTION_AREA_HEIGHT_OFFSET);
+            this.Height -= (this.grbDeleteException.Height + EXCEPTION_AREA_HEIGHT_OFFSET);
         }
 
         /// <summary>
         /// Shows the the area, if it is not visible, shows exception durting deleting files and clear listview
         /// </summary>
-        void DeleteExceptionAreaShow()
+        private void DeleteExceptionAreaShow()
         {
             this.lsvDeleteException.Items.Clear();
             this.grbDeleteException.Visible = true;
-            this.Height = this.Height + (this.grbDeleteException.Height + EXCEPTION_AREA_HEIGHT_OFFSET);
+            this.Height += (this.grbDeleteException.Height + EXCEPTION_AREA_HEIGHT_OFFSET);
         }
         #endregion
     }
