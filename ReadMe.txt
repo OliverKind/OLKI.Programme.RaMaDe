@@ -40,7 +40,7 @@ Das Recht der Vermarktung fällt somit exklusiv dem Autor der Software zu.
 1 - Systemvoraussetzungen
 *************************
 
-Damit die Software 'FDA - FastDateAdjust' einwandfrei läuft, muss
+Damit die Software 'RaMaDe - RawMatchAndDelete' einwandfrei läuft, muss
 das Computersystem folgende Voraussetzungen erfüllen:
 
 - Prozessor 1 GHz
