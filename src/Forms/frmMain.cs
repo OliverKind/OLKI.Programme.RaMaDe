@@ -57,6 +57,41 @@ namespace OLKI.Programme.RaMaDe.src.Forms
             this.DeleteExceptionAreaHide();
         }
 
+        private void FileManger_DelteException(object sender, FileManager.ExceptionEventArgs e)
+        {
+            if (!this.grbDeleteException.Visible) this.DeleteExceptionAreaShow();
+
+            ListViewItem ExceptionItem = new ListViewItem
+            {
+                Tag = e, // Not used at this time
+                Text = e.File.Name
+            };
+            ExceptionItem.SubItems.Add(e.Exception.Message);
+            this.lsvDeleteException.Items.Add(ExceptionItem);
+        }
+
+        /// <summary>
+        /// Hides the the area, if it is visible, shows exception durting deleting files and clear listview
+        /// </summary>
+        private void DeleteExceptionAreaHide()
+        {
+            this.grbDeleteException.Visible = false;
+            this.lsvDeleteException.Items.Clear();
+            this.Height -= (this.grbDeleteException.Height + EXCEPTION_AREA_HEIGHT_OFFSET);
+        }
+
+        /// <summary>
+        /// Shows the the area, if it is not visible, shows exception durting deleting files and clear listview
+        /// </summary>
+        private void DeleteExceptionAreaShow()
+        {
+            this.lsvDeleteException.Items.Clear();
+            this.grbDeleteException.Visible = true;
+            this.Height += (this.grbDeleteException.Height + EXCEPTION_AREA_HEIGHT_OFFSET);
+        }
+
+        #region Form Events
+
         private void MainForm_HelpButtonClicked(object sender, System.ComponentModel.CancelEventArgs e)
         {
             About AboutForm = new About();
@@ -122,39 +157,7 @@ namespace OLKI.Programme.RaMaDe.src.Forms
                 }
             }
         }
-
-        private void FileManger_DelteException(object sender, FileManager.ExceptionEventArgs e)
-        {
-            if (!this.grbDeleteException.Visible) this.DeleteExceptionAreaShow();
-
-            ListViewItem ExceptionItem = new ListViewItem
-            {
-                Tag = e, // Not used at this time
-                Text = e.File.Name
-            };
-            ExceptionItem.SubItems.Add(e.Exception.Message);
-            this.lsvDeleteException.Items.Add(ExceptionItem);
-        }
-
-        /// <summary>
-        /// Hides the the area, if it is visible, shows exception durting deleting files and clear listview
-        /// </summary>
-        private void DeleteExceptionAreaHide()
-        {
-            this.grbDeleteException.Visible = false;
-            this.lsvDeleteException.Items.Clear();
-            this.Height -= (this.grbDeleteException.Height + EXCEPTION_AREA_HEIGHT_OFFSET);
-        }
-
-        /// <summary>
-        /// Shows the the area, if it is not visible, shows exception durting deleting files and clear listview
-        /// </summary>
-        private void DeleteExceptionAreaShow()
-        {
-            this.lsvDeleteException.Items.Clear();
-            this.grbDeleteException.Visible = true;
-            this.Height += (this.grbDeleteException.Height + EXCEPTION_AREA_HEIGHT_OFFSET);
-        }
+        #endregion
         #endregion
     }
 }
