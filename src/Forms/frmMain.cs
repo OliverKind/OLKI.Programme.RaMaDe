@@ -1,7 +1,7 @@
 ﻿/*
  * RaMaDe - RawMatchAndDelete
  * 
- * Copyright:   Oliver Kind - 2019
+ * Copyright:   Oliver Kind - 2020
  * License:     LGPL
  * 
  * Desctiption:
@@ -69,7 +69,7 @@ namespace OLKI.Programme.RaMaDe.src.Forms
         {
             FolderBrowserDialog FolderBrowser = new FolderBrowserDialog
             {
-                Description = frmMain_Mres.btnDirectoryClick__FolderBrowser_Description,
+                Description = frmMain_Stringtable._0x0005,
                 SelectedPath = this.txtDirectroy.Text,
                 ShowNewFolderButton = false
             };
@@ -96,7 +96,7 @@ namespace OLKI.Programme.RaMaDe.src.Forms
             // Stop if directroy path is invalid or file did nox exists
             if (string.IsNullOrEmpty(this.txtDirectroy.Text) || !new DirectoryInfo(this.txtDirectroy.Text).Exists)
             {
-                MessageBox.Show(frmMain_Mres.btnDeleteRawFileClick__NoDirectroy_Message, frmMain_Mres.btnDeleteRawFileClick__NoDirectroy_Caption, MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show(frmMain_Stringtable._0x0003m, frmMain_Stringtable._0x0003c, MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 return;
             }
 
@@ -105,7 +105,7 @@ namespace OLKI.Programme.RaMaDe.src.Forms
             // Stop if no files found
             if (FileManger.FilesRawToDelete.Count == 0)
             {
-                if (MessageBox.Show(frmMain_Mres.btnDeleteRawFileClick__NoFiles_Message, frmMain_Mres.btnDeleteRawFileClick__NoFiles_Caption, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                if (MessageBox.Show(frmMain_Stringtable._0x0004m, frmMain_Stringtable._0x0004c, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
                     Application.Exit();
                 }
@@ -113,10 +113,10 @@ namespace OLKI.Programme.RaMaDe.src.Forms
             }
 
             // Delete files withoud corresponding file
-            if (MessageBox.Show(string.Format(frmMain_Mres.btnDeleteRawFileClick__DeleteFiles_Message, new object[] { FileManger.FilesRawToDelete.Count.ToString() }), string.Format(frmMain_Mres.btnDeleteRawFileClick__DeleteFiles_Caption, new object[] { FileManger.FilesRawToDelete.Count }), MessageBoxButtons.YesNoCancel, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+            if (MessageBox.Show(string.Format(frmMain_Stringtable._0x0001m, new object[] { FileManger.FilesRawToDelete.Count.ToString() }), string.Format(frmMain_Stringtable._0x0001c, new object[] { FileManger.FilesRawToDelete.Count }), MessageBoxButtons.YesNoCancel, MessageBoxIcon.Exclamation) == DialogResult.Yes)
             {
                 FileManger.DelteNonCompareFiles();
-                if (MessageBox.Show(string.Format(frmMain_Mres.btnDeleteRawFileClick__Finish_Message, new object[] { FileManger.DeltedFiles, this.lsvDeleteException.Items.Count }), string.Format(frmMain_Mres.btnDeleteRawFileClick__Finish_Caption, new object[] { FileManger.DeltedFiles }), MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                if (MessageBox.Show(string.Format(frmMain_Stringtable._0c0002m, new object[] { FileManger.DeltedFiles, this.lsvDeleteException.Items.Count }), string.Format(frmMain_Stringtable._0x0002c, new object[] { FileManger.DeltedFiles }), MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
                     Application.Exit();
                 }
