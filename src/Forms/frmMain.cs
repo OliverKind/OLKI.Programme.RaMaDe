@@ -31,17 +31,17 @@ namespace OLKI.Programme.RaMaDe.src.Forms
     /// <summary>
     /// Application main form
     /// </summary>
-    public partial class Main : Form
+    public partial class MainForm : Form
     {
         #region Constants
         /// <summary>
         /// Default text in Textfield for comapre file extensions
         /// </summary>
-        private const string DEFAULT_EXTENSION_COMPARE = "jpg,jpeg";
+        //TODO: REMOVE --> private const string DEFAULT_EXTENSION_COMPARE = "jpg,jpeg";
         /// <summary>
         /// Default text in Textfield for raw-File identification
         /// </summary>
-        private const string DEFAULT_EXTENSION_RAW = "3fr,arw,cr2,cr3,crw,cs1,cs16,cs4,dcr,dcs,dng,erf,fff,iiq,kdc,mdc,mef,mfw,mrw,nef,nrw,orf,ori,pef,raf,raw,rw2,rwl,sr2,srf,srw,tif,x3f";
+        //TODO: REMOVE --> private const string DEFAULT_EXTENSION_RAW = "3fr,arw,cr2,cr3,crw,cs1,cs16,cs4,dcr,dcs,dng,erf,fff,iiq,kdc,mdc,mef,mfw,mrw,nef,nrw,orf,ori,pef,raf,raw,rw2,rwl,sr2,srf,srw,tif,x3f";
         /// <summary>
         /// Height offset for the exception log area, to create the right height weilhe show and hide this area and resice the form
         /// </summary>
@@ -49,11 +49,11 @@ namespace OLKI.Programme.RaMaDe.src.Forms
         #endregion
 
         #region Methods
-        public Main()
+        public MainForm()
         {
             InitializeComponent();
-            this.txtFileExtensionCorresponding.Text = DEFAULT_EXTENSION_COMPARE;
-            this.txtFileExtensionRaw.Text = DEFAULT_EXTENSION_RAW;
+            this.txtFileExtensionCorresponding.Text = Properties.Settings.Default.ExtensionCompare;
+            this.txtFileExtensionRaw.Text = Properties.Settings.Default.ExtensionRaw;
             this.DeleteExceptionAreaHide();
         }
 
@@ -156,6 +156,26 @@ namespace OLKI.Programme.RaMaDe.src.Forms
                     Application.Exit();
                 }
             }
+        }
+
+        private void btnRestoreSettings_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.Reset();
+            this.txtFileExtensionCorresponding.Text = Properties.Settings.Default.ExtensionCompare;
+            this.txtFileExtensionRaw.Text = Properties.Settings.Default.ExtensionRaw;
+        }
+
+
+        private void txtFileExtensionCorresponding_TextChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.ExtensionCompare = this.txtFileExtensionCorresponding.Text;
+            Properties.Settings.Default.Save();
+        }
+
+        private void txtFileExtensionRaw_TextChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.ExtensionRaw = this.txtFileExtensionRaw.Text;
+            Properties.Settings.Default.Save();
         }
         #endregion
         #endregion

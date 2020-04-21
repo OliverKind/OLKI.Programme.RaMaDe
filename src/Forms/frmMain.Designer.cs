@@ -1,6 +1,6 @@
 ﻿namespace OLKI.Programme.RaMaDe.src.Forms
 {
-    partial class Main
+    partial class MainForm
     {
         /// <summary>
         /// Erforderliche Designervariable.
@@ -28,7 +28,7 @@
         /// </summary>
 		private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.lblDirectroy = new System.Windows.Forms.Label();
             this.txtDirectroy = new System.Windows.Forms.TextBox();
             this.btnDirectory = new System.Windows.Forms.Button();
@@ -43,6 +43,7 @@
             this.clhException = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblPictureAdvice = new System.Windows.Forms.Label();
             this.lblRawFileAdvice = new System.Windows.Forms.Label();
+            this.btnRestoreSettings = new System.Windows.Forms.Button();
             this.grbDeleteException.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -89,6 +90,7 @@
             this.txtFileExtensionCorresponding.Name = "txtFileExtensionCorresponding";
             this.txtFileExtensionCorresponding.Size = new System.Drawing.Size(286, 20);
             this.txtFileExtensionCorresponding.TabIndex = 4;
+            this.txtFileExtensionCorresponding.TextChanged += new System.EventHandler(this.txtFileExtensionCorresponding_TextChanged);
             // 
             // txtFileExtensionRaw
             // 
@@ -97,6 +99,7 @@
             this.txtFileExtensionRaw.Name = "txtFileExtensionRaw";
             this.txtFileExtensionRaw.Size = new System.Drawing.Size(286, 20);
             this.txtFileExtensionRaw.TabIndex = 7;
+            this.txtFileExtensionRaw.TextChanged += new System.EventHandler(this.txtFileExtensionRaw_TextChanged);
             // 
             // lblRawFile
             // 
@@ -112,7 +115,7 @@
             this.btnDeleteRawFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteRawFile.Location = new System.Drawing.Point(12, 90);
             this.btnDeleteRawFile.Name = "btnDeleteRawFile";
-            this.btnDeleteRawFile.Size = new System.Drawing.Size(653, 46);
+            this.btnDeleteRawFile.Size = new System.Drawing.Size(511, 46);
             this.btnDeleteRawFile.TabIndex = 9;
             this.btnDeleteRawFile.Text = "RAW-Dateien ohne zugehörige Vergleichsdatei löschen";
             this.btnDeleteRawFile.UseVisualStyleBackColor = true;
@@ -124,7 +127,7 @@
             this.grbDeleteException.Location = new System.Drawing.Point(12, 142);
             this.grbDeleteException.Name = "grbDeleteException";
             this.grbDeleteException.Size = new System.Drawing.Size(653, 194);
-            this.grbDeleteException.TabIndex = 10;
+            this.grbDeleteException.TabIndex = 11;
             this.grbDeleteException.TabStop = false;
             this.grbDeleteException.Text = "Fehler beim Löschen von Dateien";
             // 
@@ -174,11 +177,22 @@
             this.lblRawFileAdvice.TabIndex = 8;
             this.lblRawFileAdvice.Text = "Mehrfacheingaben durch Komma trennen";
             // 
+            // btnRestoreSettings
+            // 
+            this.btnRestoreSettings.Location = new System.Drawing.Point(529, 90);
+            this.btnRestoreSettings.Name = "btnRestoreSettings";
+            this.btnRestoreSettings.Size = new System.Drawing.Size(136, 46);
+            this.btnRestoreSettings.TabIndex = 10;
+            this.btnRestoreSettings.Text = "Standardwerte\r\nwiederherstellen";
+            this.btnRestoreSettings.UseVisualStyleBackColor = true;
+            this.btnRestoreSettings.Click += new System.EventHandler(this.btnRestoreSettings_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(677, 348);
+            this.Controls.Add(this.btnRestoreSettings);
             this.Controls.Add(this.lblRawFileAdvice);
             this.Controls.Add(this.lblPictureAdvice);
             this.Controls.Add(this.grbDeleteException);
@@ -221,6 +235,7 @@
 
         private System.Windows.Forms.Label lblPictureAdvice;
         private System.Windows.Forms.Label lblRawFileAdvice;
+        private System.Windows.Forms.Button btnRestoreSettings;
     }
 }
 
