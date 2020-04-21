@@ -12,7 +12,7 @@ namespace OLKI.Programme.RaMaDe.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.3.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.5.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -20,6 +20,33 @@ namespace OLKI.Programme.RaMaDe.Properties {
         public static Settings Default {
             get {
                 return defaultInstance;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("jpg,jpeg")]
+        [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
+        public string ExtensionCompare {
+            get {
+                return ((string)(this["ExtensionCompare"]));
+            }
+            set {
+                this["ExtensionCompare"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("3fr,arw,cr2,cr3,crw,cs1,cs16,cs4,dcr,dcs,dng,erf,fff,iiq,kdc,mdc,mef,mfw,mrw,nef," +
+            "nrw,orf,ori,pef,raf,raw,rw2,rwl,sr2,srf,srw,tif,x3f")]
+        [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
+        public string ExtensionRaw {
+            get {
+                return ((string)(this["ExtensionRaw"]));
+            }
+            set {
+                this["ExtensionRaw"] = value;
             }
         }
     }
