@@ -71,10 +71,10 @@
     <Compile Include="src\Forms\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\Forms\frmMain_Mres.Designer.cs">
+    <Compile Include="src\Forms\frmMain.Stringtable.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>frmMain_Mres.resx</DependentUpon>
+      <DependentUpon>frmMain.Stringtable.resx</DependentUpon>
     </Compile>
     <Compile Include="src\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,9 +87,9 @@
     <EmbeddedResource Include="src\Forms\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\Forms\frmMain_Mres.resx">
+    <EmbeddedResource Include="src\Forms\frmMain.Stringtable.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>frmMain_Mres.Designer.cs</LastGenOutput>
+      <LastGenOutput>frmMain.Stringtable.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
