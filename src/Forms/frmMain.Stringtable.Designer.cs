@@ -22,14 +22,14 @@ namespace OLKI.Programme.RaMaDe.src.Forms {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class frmMain_Mres {
+    internal class frmMain_Stringtable {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal frmMain_Mres() {
+        internal frmMain_Stringtable() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace OLKI.Programme.RaMaDe.src.Forms {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("OLKI.Programme.RaMaDe.src.Forms.frmMain_Mres", typeof(frmMain_Mres).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("OLKI.Programme.RaMaDe.src.Forms.frmMain.Stringtable", typeof(frmMain_Stringtable).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,112 +61,112 @@ namespace OLKI.Programme.RaMaDe.src.Forms {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die {0} Dateien löschen? ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Löschen abgeschlossen.
+        ///
+        ///{0} Dateien gelöscht.
+        ///{1} Fehler beim löschen
+        ///
+        ///Möchten Sie das Programm jetzt beenden? ähnelt.
         /// </summary>
-        internal static string btnDeleteRawFileClick__DeleteFiles_Caption {
+        internal static string _0c0002m {
             get {
-                return ResourceManager.GetString("btnDeleteRawFileClick__DeleteFiles_Caption", resourceCulture);
+                return ResourceManager.GetString("0c0002m", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die {0} Datteien zum löschen gefunden. Möchte Sie diese jetzt löschen?
+        ///   Sucht eine lokalisierte Zeichenfolge, die {0} Dateien löschen? ähnelt.
+        /// </summary>
+        internal static string _0x0001c {
+            get {
+                return ResourceManager.GetString("0x0001c", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die {0} Dateien zum Löschen gefunden. Möchte Sie diese jetzt löschen?
         ///
         ///ACHTUNG: Die Dateien werden gelöscht und nicht in den Papierkorb verschoben. Dieser Vorgang kann nicht rückgängig gemacht werden. ähnelt.
         /// </summary>
-        internal static string btnDeleteRawFileClick__DeleteFiles_Message {
+        internal static string _0x0001m {
             get {
-                return ResourceManager.GetString("btnDeleteRawFileClick__DeleteFiles_Message", resourceCulture);
+                return ResourceManager.GetString("0x0001m", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die {0} Dateien löschen. ähnelt.
         /// </summary>
-        internal static string btnDeleteRawFileClick__Finish_Caption {
+        internal static string _0x0002c {
             get {
-                return ResourceManager.GetString("btnDeleteRawFileClick__Finish_Caption", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Löschen abgeschlossen.
-        ///
-        ///{0} Dateien gelöscht.
-        ///{1} Fehler beim löschen
-        ///
-        ///Möchen Sie das Programm jetzt beenden? ähnelt.
-        /// </summary>
-        internal static string btnDeleteRawFileClick__Finish_Message {
-            get {
-                return ResourceManager.GetString("btnDeleteRawFileClick__Finish_Message", resourceCulture);
+                return ResourceManager.GetString("0x0002c", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Ordner nicht gefunden. ähnelt.
         /// </summary>
-        internal static string btnDeleteRawFileClick__NoDirectroy_Caption {
+        internal static string _0x0003c {
             get {
-                return ResourceManager.GetString("btnDeleteRawFileClick__NoDirectroy_Caption", resourceCulture);
+                return ResourceManager.GetString("0x0003c", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Der angegebene Pfad konnte nicht gefunden werden. ähnelt.
         /// </summary>
-        internal static string btnDeleteRawFileClick__NoDirectroy_Message {
+        internal static string _0x0003m {
             get {
-                return ResourceManager.GetString("btnDeleteRawFileClick__NoDirectroy_Message", resourceCulture);
+                return ResourceManager.GetString("0x0003m", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Dateien löschen. ähnelt.
         /// </summary>
-        internal static string btnDeleteRawFileClick__NoFiles_Caption {
+        internal static string _0x0004c {
             get {
-                return ResourceManager.GetString("btnDeleteRawFileClick__NoFiles_Caption", resourceCulture);
+                return ResourceManager.GetString("0x0004c", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Keine Dateien zum löschen gefunden.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Keine Dateien zum Löschen gefunden.
         ///
-        ///Möchen Sie das Programm jetzt beenden? ähnelt.
+        ///Möchten Sie das Programm jetzt beenden? ähnelt.
         /// </summary>
-        internal static string btnDeleteRawFileClick__NoFiles_Message {
+        internal static string _0x0004m {
             get {
-                return ResourceManager.GetString("btnDeleteRawFileClick__NoFiles_Message", resourceCulture);
+                return ResourceManager.GetString("0x0004m", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Ordner mit Bildern auswählen ähnelt.
         /// </summary>
-        internal static string btnDirectoryClick__FolderBrowser_Description {
+        internal static string _0x0005 {
             get {
-                return ResourceManager.GetString("btnDirectoryClick__FolderBrowser_Description", resourceCulture);
+                return ResourceManager.GetString("0x0005", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Dateien zum löschen suchen ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Dateien zum Löschen suchen ähnelt.
         /// </summary>
-        internal static string btnDirectoryClick__SearchException_Caption {
+        internal static string _0x0006c {
             get {
-                return ResourceManager.GetString("btnDirectoryClick__SearchException_Caption", resourceCulture);
+                return ResourceManager.GetString("0x0006c", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Beim Suchen von Dateien zum löschen ist ein Fehler aufgetreten.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Beim Suchen von Dateien zum Löschen ist ein Fehler aufgetreten.
         ///
         ///{0} ähnelt.
         /// </summary>
-        internal static string btnDirectoryClick__SearchException_Message {
+        internal static string _0x0006m {
             get {
-                return ResourceManager.GetString("btnDirectoryClick__SearchException_Message", resourceCulture);
+                return ResourceManager.GetString("0x0006m", resourceCulture);
             }
         }
     }

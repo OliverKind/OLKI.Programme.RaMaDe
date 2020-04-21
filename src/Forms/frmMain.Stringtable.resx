@@ -117,48 +117,59 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnDeleteRawFileClick__DeleteFiles_Caption" xml:space="preserve">
-    <value>{0} Dateien löschen?</value>
-  </data>
-  <data name="btnDeleteRawFileClick__DeleteFiles_Message" xml:space="preserve">
-    <value>{0} Datteien zum löschen gefunden. Möchte Sie diese jetzt löschen?
-
-ACHTUNG: Die Dateien werden gelöscht und nicht in den Papierkorb verschoben. Dieser Vorgang kann nicht rückgängig gemacht werden.</value>
-  </data>
-  <data name="btnDeleteRawFileClick__Finish_Caption" xml:space="preserve">
-    <value>{0} Dateien löschen.</value>
-  </data>
-  <data name="btnDeleteRawFileClick__Finish_Message" xml:space="preserve">
+  <data name="0c0002m" xml:space="preserve">
     <value>Löschen abgeschlossen.
 
 {0} Dateien gelöscht.
 {1} Fehler beim löschen
 
-Möchen Sie das Programm jetzt beenden?</value>
+Möchten Sie das Programm jetzt beenden?</value>
+    <comment>btnDeleteRawFileClick__Finish_Message</comment>
   </data>
-  <data name="btnDeleteRawFileClick__NoDirectroy_Caption" xml:space="preserve">
-    <value>Ordner nicht gefunden.</value>
+  <data name="0x0001c" xml:space="preserve">
+    <value>{0} Dateien löschen?</value>
+    <comment>btnDeleteRawFileClick__DeleteFiles_Caption</comment>
   </data>
-  <data name="btnDeleteRawFileClick__NoDirectroy_Message" xml:space="preserve">
-    <value>Der angegebene Pfad konnte nicht gefunden werden.</value>
-  </data>
-  <data name="btnDeleteRawFileClick__NoFiles_Caption" xml:space="preserve">
-    <value>Dateien löschen.</value>
-  </data>
-  <data name="btnDeleteRawFileClick__NoFiles_Message" xml:space="preserve">
-    <value>Keine Dateien zum löschen gefunden.
+  <data name="0x0001m" xml:space="preserve">
+    <value>{0} Dateien zum Löschen gefunden. Möchte Sie diese jetzt löschen?
 
-Möchen Sie das Programm jetzt beenden?</value>
+ACHTUNG: Die Dateien werden gelöscht und nicht in den Papierkorb verschoben. Dieser Vorgang kann nicht rückgängig gemacht werden.</value>
+    <comment>btnDeleteRawFileClick__DeleteFiles_Message</comment>
   </data>
-  <data name="btnDirectoryClick__FolderBrowser_Description" xml:space="preserve">
+  <data name="0x0002c" xml:space="preserve">
+    <value>{0} Dateien löschen.</value>
+    <comment>btnDeleteRawFileClick__Finish_Caption</comment>
+  </data>
+  <data name="0x0003c" xml:space="preserve">
+    <value>Ordner nicht gefunden.</value>
+    <comment>btnDeleteRawFileClick__NoDirectroy_Caption</comment>
+  </data>
+  <data name="0x0003m" xml:space="preserve">
+    <value>Der angegebene Pfad konnte nicht gefunden werden.</value>
+    <comment>btnDeleteRawFileClick__NoDirectroy_Message</comment>
+  </data>
+  <data name="0x0004c" xml:space="preserve">
+    <value>Dateien löschen.</value>
+    <comment>btnDeleteRawFileClick__NoFiles_Caption</comment>
+  </data>
+  <data name="0x0004m" xml:space="preserve">
+    <value>Keine Dateien zum Löschen gefunden.
+
+Möchten Sie das Programm jetzt beenden?</value>
+    <comment>btnDeleteRawFileClick__NoFiles_Message</comment>
+  </data>
+  <data name="0x0005" xml:space="preserve">
     <value>Ordner mit Bildern auswählen</value>
+    <comment>btnDirectoryClick__FolderBrowser_Description</comment>
   </data>
-  <data name="btnDirectoryClick__SearchException_Caption" xml:space="preserve">
-    <value>Dateien zum löschen suchen</value>
+  <data name="0x0006c" xml:space="preserve">
+    <value>Dateien zum Löschen suchen</value>
+    <comment>btnDirectoryClick__SearchException_Caption</comment>
   </data>
-  <data name="btnDirectoryClick__SearchException_Message" xml:space="preserve">
-    <value>Beim Suchen von Dateien zum löschen ist ein Fehler aufgetreten.
+  <data name="0x0006m" xml:space="preserve">
+    <value>Beim Suchen von Dateien zum Löschen ist ein Fehler aufgetreten.
 
 {0}</value>
+    <comment>btnDirectoryClick__SearchException_Message</comment>
   </data>
 </root>

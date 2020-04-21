@@ -180,7 +180,7 @@ namespace OLKI.Programme.RaMaDe.src
             }
             catch (Exception ex)
             {
-                MessageBox.Show(string.Format(frmMain_Mres.btnDirectoryClick__SearchException_Message, new object[] { ex.Message }), frmMain_Mres.btnDirectoryClick__SearchException_Caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(string.Format(frmMain_Stringtable._0x0006m, new object[] { ex.Message }), frmMain_Stringtable._0x0006c, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -253,7 +253,7 @@ namespace OLKI.Programme.RaMaDe.src
             }
             catch (Exception ex)
             {
-                MessageBox.Show(string.Format(frmMain_Mres.btnDirectoryClick__SearchException_Caption, new object[] { ex.Message }), frmMain_Mres.btnDirectoryClick__SearchException_Caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(string.Format(frmMain_Stringtable._0x0006c, new object[] { ex.Message }), frmMain_Stringtable._0x0006c, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
