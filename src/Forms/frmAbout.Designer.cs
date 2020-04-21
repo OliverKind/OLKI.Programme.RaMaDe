@@ -64,7 +64,7 @@
             this.lblProductName.Name = "lblProductName";
             this.lblProductName.Size = new System.Drawing.Size(446, 17);
             this.lblProductName.TabIndex = 0;
-            this.lblProductName.Text = "Progamm: {0}";
+            this.lblProductName.Text = "Programm: {0}";
             this.lblProductName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tblLayoutPanel
@@ -199,7 +199,7 @@
             this.btnGoToLicenses.Text = "&Lizenz";
             this.btnGoToLicenses.Click += new System.EventHandler(this.btnGoToLicenses_Click);
             // 
-            // AboutForm
+            // About
             // 
             this.AcceptButton = this.btnClose;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -210,7 +210,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "AboutForm";
+            this.Name = "About";
             this.Padding = new System.Windows.Forms.Padding(9);
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
