@@ -26,7 +26,7 @@ using System;
 using System.Reflection;
 using System.Windows.Forms;
 
-namespace OLKI.Programme.RaMaDe
+namespace OLKI.Programme.RaMaDe.src.Forms
 {
     /// <summary>
     /// A form to show informations about the application

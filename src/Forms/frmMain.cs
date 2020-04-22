@@ -27,7 +27,7 @@ using System;
 using System.IO;
 using System.Windows.Forms;
 
-namespace OLKI.Programme.RaMaDe
+namespace OLKI.Programme.RaMaDe.src.Forms
 {
     /// <summary>
     /// Application main form

@@ -26,7 +26,7 @@ using OLKI.Programme.RaMaDe.Properties;
 using System;
 using System.Windows.Forms;
 
-namespace OLKI.Programme.RaMaDe
+namespace OLKI.Programme.RaMaDe.src
 {
     /// <summary>
     /// Root object of the application
@@ -80,7 +80,7 @@ namespace OLKI.Programme.RaMaDe
                 Settings.Default.Save();
             }
 
-            Application.Run(new MainForm());
+            Application.Run(new Forms.MainForm());
         }
         #endregion
     }

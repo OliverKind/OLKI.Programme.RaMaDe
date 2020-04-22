@@ -1,4 +1,4 @@
-﻿namespace OLKI.Programme.RaMaDe
+﻿namespace OLKI.Programme.RaMaDe.src.Forms
 {
     partial class About
     {

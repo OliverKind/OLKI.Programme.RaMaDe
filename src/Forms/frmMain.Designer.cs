@@ -1,4 +1,4 @@
-﻿namespace OLKI.Programme.RaMaDe
+﻿namespace OLKI.Programme.RaMaDe.src.Forms
 {
     partial class MainForm
     {
@@ -66,11 +66,14 @@
             // 
             // btnDirectory
             // 
+            this.btnDirectory.Image = ((System.Drawing.Image)(resources.GetObject("btnDirectory.Image")));
+            this.btnDirectory.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDirectory.Location = new System.Drawing.Point(529, 13);
             this.btnDirectory.Name = "btnDirectory";
             this.btnDirectory.Size = new System.Drawing.Size(136, 23);
             this.btnDirectory.TabIndex = 2;
             this.btnDirectory.Text = "Durchsuchen";
+            this.btnDirectory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDirectory.UseVisualStyleBackColor = true;
             this.btnDirectory.Click += new System.EventHandler(this.btnDirectory_Click);
             // 
