@@ -36,7 +36,7 @@
     <ApplicationIcon>RaMaDe.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>OLKI.Programme.RaMaDe.Program</StartupObject>
+    <StartupObject>OLKI.Programme.RaMaDe.src.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
