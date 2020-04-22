@@ -1,7 +1,7 @@
 ﻿/*
  * RaMaDe - RawMatchAndDelete
  * 
- * Copyright:   Oliver Kind - 2019
+ * Copyright:   Oliver Kind - 2020
  * License:     LGPL
  * 
  * Desctiption:
@@ -25,7 +25,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace OLKI.Programme.RaMaDe.src
+namespace OLKI.Programme.RaMaDe
 {
     /// <summary>
     /// Root object of the application
@@ -41,7 +41,7 @@ namespace OLKI.Programme.RaMaDe.src
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Forms.Main());
+            Application.Run(new MainForm());
         }
         #endregion
     }

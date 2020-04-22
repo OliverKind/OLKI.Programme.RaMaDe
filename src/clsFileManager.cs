@@ -29,7 +29,7 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace OLKI.Programme.RaMaDe.src
+namespace OLKI.Programme.RaMaDe
 {
     /// <summary>
     /// Class to manage/delete RAW-Files they don't have an corresponding low(er) quality picture file

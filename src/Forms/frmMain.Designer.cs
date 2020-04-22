@@ -1,4 +1,4 @@
-﻿namespace OLKI.Programme.RaMaDe.src.Forms
+﻿namespace OLKI.Programme.RaMaDe
 {
     partial class MainForm
     {

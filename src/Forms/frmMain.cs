@@ -22,11 +22,12 @@
  * 
  * */
 
+using OLKI.Programme.RaMaDe.src.Forms;
 using System;
 using System.IO;
 using System.Windows.Forms;
 
-namespace OLKI.Programme.RaMaDe.src.Forms
+namespace OLKI.Programme.RaMaDe
 {
     /// <summary>
     /// Application main form
@@ -118,7 +119,7 @@ namespace OLKI.Programme.RaMaDe.src.Forms
 
         private void btnDeleteRawFile_Click(object sender, EventArgs e)
         {
-            src.FileManager FileManger = new FileManager
+            FileManager FileManger = new FileManager
             {
                 ExtensionsCompare = this.txtFileExtensionCorresponding.Text.ToLower(),
                 ExtensionsRaw = this.txtFileExtensionRaw.Text.ToLower(),

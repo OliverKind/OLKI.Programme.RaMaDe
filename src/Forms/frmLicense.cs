@@ -25,7 +25,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace OLKI.Programme.RaMaDe.src.Forms
+namespace OLKI.Programme.RaMaDe
 {
     /// <summary>
     /// A form to show license information
