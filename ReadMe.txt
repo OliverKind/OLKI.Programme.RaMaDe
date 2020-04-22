@@ -1,7 +1,7 @@
-'RaMaDe - 1.0.0.1' - RawMatchAndDelete
+'RaMaDe - 1.1.0.3' - RawMatchAndDelete
 **************************************
 
-Copyright © 2019 OLKI - Oliver Kind
+Copyright © 2020 OLKI - Oliver Kind
 Alle Rechte vorbehalten.
 
 
