@@ -49,5 +49,18 @@ namespace OLKI.Programme.RaMaDe.Properties {
                 this["ExtensionRaw"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
+        public bool Internal_SettingsUpgradet {
+            get {
+                return ((bool)(this["Internal_SettingsUpgradet"]));
+            }
+            set {
+                this["Internal_SettingsUpgradet"] = value;
+            }
+        }
     }
 }

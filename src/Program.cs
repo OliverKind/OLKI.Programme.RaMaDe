@@ -22,6 +22,7 @@
  * 
  * */
 
+using OLKI.Programme.RaMaDe.Properties;
 using System;
 using System.Windows.Forms;
 
@@ -32,6 +33,17 @@ namespace OLKI.Programme.RaMaDe
     /// </summary>
     static class Program
     {
+        #region Constants
+        /// <summary>
+        /// Root path in registry HKEY_CURRENT_USER
+        /// </summary>
+        const string REGISTRY_USER_ROOT = "HKEY_CURRENT_USER";
+        /// <summary>
+        /// Key where the settings file path should been stored in registry
+        /// </summary>
+        const string REGISTRY_SETTINGS_DIRECTORY_KEY = "SettingDir";
+        #endregion
+
         #region Methodes
         /// <summary>
         /// Main entry point of the application
@@ -41,6 +53,33 @@ namespace OLKI.Programme.RaMaDe
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+
+            // Save settings directory to registry, to make it possible for the uninstaller to delete it
+            string RegistryPath = string.Empty;
+
+            System.Configuration.Configuration Config = System.Configuration.ConfigurationManager.OpenExeConfiguration(System.Configuration.ConfigurationUserLevel.PerUserRoaming);
+            string[] FilePathSplit = Config.FilePath.Split('\\');
+            string ConigFilePathRootDir = string.Empty;
+            for (int i = 0; i < FilePathSplit.Length - 2; i++)
+            {
+                ConigFilePathRootDir += FilePathSplit[i];
+                ConigFilePathRootDir += '\\';
+            }
+            RegistryPath += REGISTRY_USER_ROOT + '\\';
+            RegistryPath += "Software" + '\\';
+            RegistryPath += Application.CompanyName + '\\';
+            RegistryPath += Application.ProductName + '\\';
+            Microsoft.Win32.Registry.SetValue(RegistryPath, REGISTRY_SETTINGS_DIRECTORY_KEY, ConigFilePathRootDir);
+
+            // Upgrade Settings
+            if (!Settings.Default.Internal_SettingsUpgradet)
+            {
+                Settings.Default.Upgrade();
+                Settings.Default.Internal_SettingsUpgradet = true;
+                Settings.Default.Save();
+            }
+
             Application.Run(new MainForm());
         }
         #endregion
