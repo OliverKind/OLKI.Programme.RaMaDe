@@ -117,11 +117,14 @@
             // btnDeleteRawFile
             // 
             this.btnDeleteRawFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteRawFile.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteRawFile.Image")));
+            this.btnDeleteRawFile.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDeleteRawFile.Location = new System.Drawing.Point(12, 90);
             this.btnDeleteRawFile.Name = "btnDeleteRawFile";
             this.btnDeleteRawFile.Size = new System.Drawing.Size(653, 46);
             this.btnDeleteRawFile.TabIndex = 9;
             this.btnDeleteRawFile.Text = "RAW-Dateien ohne zugehörige Vergleichsdatei löschen";
+            this.btnDeleteRawFile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDeleteRawFile.UseVisualStyleBackColor = true;
             this.btnDeleteRawFile.Click += new System.EventHandler(this.btnDeleteRawFile_Click);
             // 
