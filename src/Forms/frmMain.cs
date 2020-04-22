@@ -22,7 +22,7 @@
  * 
  * */
 
-using OLKI.Programme.RaMaDe.src.Forms;
+using OLKI.Programme.RaMaDe.Properties;
 using System;
 using System.IO;
 using System.Windows.Forms;
@@ -159,24 +159,33 @@ namespace OLKI.Programme.RaMaDe.src.Forms
             }
         }
 
-        private void btnRestoreSettings_Click(object sender, EventArgs e)
-        {
-            Properties.Settings.Default.Reset();
-            this.txtFileExtensionCorresponding.Text = Properties.Settings.Default.ExtensionCompare;
-            this.txtFileExtensionRaw.Text = Properties.Settings.Default.ExtensionRaw;
-        }
-
-
         private void txtFileExtensionCorresponding_TextChanged(object sender, EventArgs e)
         {
-            Properties.Settings.Default.ExtensionCompare = this.txtFileExtensionCorresponding.Text;
-            Properties.Settings.Default.Save();
+            Settings.Default.ExtensionCompare = this.txtFileExtensionCorresponding.Text;
+            Settings.Default.Save();
+        }
+        private void btnFileExtensionCorrespondingRestore_Click(object sender, EventArgs e)
+        {
+            Settings.Default.Reset();
+            this.txtFileExtensionCorresponding.Text = Settings.Default.ExtensionCompare;
+            Settings.Default.ExtensionRaw = this.txtFileExtensionRaw.Text;
+            Settings.Default.Internal_SettingsUpgradet = true;
+            Settings.Default.Save();
         }
 
         private void txtFileExtensionRaw_TextChanged(object sender, EventArgs e)
         {
-            Properties.Settings.Default.ExtensionRaw = this.txtFileExtensionRaw.Text;
-            Properties.Settings.Default.Save();
+            Settings.Default.ExtensionRaw = this.txtFileExtensionRaw.Text;
+            Settings.Default.Save();
+        }
+
+        private void btnFileExtensionRawRestore_Click(object sender, EventArgs e)
+        {
+            Settings.Default.Reset();
+            this.txtFileExtensionRaw.Text = Settings.Default.ExtensionRaw;
+            Settings.Default.ExtensionCompare = this.txtFileExtensionCorresponding.Text;
+            Settings.Default.Internal_SettingsUpgradet = true;
+            Settings.Default.Save();
         }
         #endregion
         #endregion

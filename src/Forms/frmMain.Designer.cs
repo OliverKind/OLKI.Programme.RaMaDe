@@ -43,7 +43,8 @@
             this.clhException = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblPictureAdvice = new System.Windows.Forms.Label();
             this.lblRawFileAdvice = new System.Windows.Forms.Label();
-            this.btnRestoreSettings = new System.Windows.Forms.Button();
+            this.btnFileExtensionCorrespondingRestore = new System.Windows.Forms.Button();
+            this.btnFileExtensionRawRestore = new System.Windows.Forms.Button();
             this.grbDeleteException.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,7 +92,7 @@
             this.txtFileExtensionCorresponding.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.txtFileExtensionCorresponding.Location = new System.Drawing.Point(170, 38);
             this.txtFileExtensionCorresponding.Name = "txtFileExtensionCorresponding";
-            this.txtFileExtensionCorresponding.Size = new System.Drawing.Size(286, 20);
+            this.txtFileExtensionCorresponding.Size = new System.Drawing.Size(257, 20);
             this.txtFileExtensionCorresponding.TabIndex = 4;
             this.txtFileExtensionCorresponding.TextChanged += new System.EventHandler(this.txtFileExtensionCorresponding_TextChanged);
             // 
@@ -100,7 +101,7 @@
             this.txtFileExtensionRaw.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.txtFileExtensionRaw.Location = new System.Drawing.Point(170, 64);
             this.txtFileExtensionRaw.Name = "txtFileExtensionRaw";
-            this.txtFileExtensionRaw.Size = new System.Drawing.Size(286, 20);
+            this.txtFileExtensionRaw.Size = new System.Drawing.Size(257, 20);
             this.txtFileExtensionRaw.TabIndex = 7;
             this.txtFileExtensionRaw.TextChanged += new System.EventHandler(this.txtFileExtensionRaw_TextChanged);
             // 
@@ -180,22 +181,37 @@
             this.lblRawFileAdvice.TabIndex = 8;
             this.lblRawFileAdvice.Text = "Mehrfacheingaben durch Komma trennen";
             // 
-            // btnRestoreSettings
+            // btnFileExtensionCorrespondingRestore
             // 
-            this.btnRestoreSettings.Location = new System.Drawing.Point(529, 90);
-            this.btnRestoreSettings.Name = "btnRestoreSettings";
-            this.btnRestoreSettings.Size = new System.Drawing.Size(136, 46);
-            this.btnRestoreSettings.TabIndex = 10;
-            this.btnRestoreSettings.Text = "Standardwerte\r\nwiederherstellen";
-            this.btnRestoreSettings.UseVisualStyleBackColor = true;
-            this.btnRestoreSettings.Click += new System.EventHandler(this.btnRestoreSettings_Click);
+            this.btnFileExtensionCorrespondingRestore.Image = ((System.Drawing.Image)(resources.GetObject("btnFileExtensionCorrespondingRestore.Image")));
+            this.btnFileExtensionCorrespondingRestore.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFileExtensionCorrespondingRestore.Location = new System.Drawing.Point(433, 36);
+            this.btnFileExtensionCorrespondingRestore.Name = "btnFileExtensionCorrespondingRestore";
+            this.btnFileExtensionCorrespondingRestore.Size = new System.Drawing.Size(23, 23);
+            this.btnFileExtensionCorrespondingRestore.TabIndex = 10;
+            this.btnFileExtensionCorrespondingRestore.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnFileExtensionCorrespondingRestore.UseVisualStyleBackColor = true;
+            this.btnFileExtensionCorrespondingRestore.Click += new System.EventHandler(this.btnFileExtensionCorrespondingRestore_Click);
+            // 
+            // btnFileExtensionRawRestore
+            // 
+            this.btnFileExtensionRawRestore.Image = ((System.Drawing.Image)(resources.GetObject("btnFileExtensionRawRestore.Image")));
+            this.btnFileExtensionRawRestore.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFileExtensionRawRestore.Location = new System.Drawing.Point(433, 62);
+            this.btnFileExtensionRawRestore.Name = "btnFileExtensionRawRestore";
+            this.btnFileExtensionRawRestore.Size = new System.Drawing.Size(23, 23);
+            this.btnFileExtensionRawRestore.TabIndex = 12;
+            this.btnFileExtensionRawRestore.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnFileExtensionRawRestore.UseVisualStyleBackColor = true;
+            this.btnFileExtensionRawRestore.Click += new System.EventHandler(this.btnFileExtensionRawRestore_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(677, 348);
-            this.Controls.Add(this.btnRestoreSettings);
+            this.Controls.Add(this.btnFileExtensionRawRestore);
+            this.Controls.Add(this.btnFileExtensionCorrespondingRestore);
             this.Controls.Add(this.lblRawFileAdvice);
             this.Controls.Add(this.lblPictureAdvice);
             this.Controls.Add(this.grbDeleteException);
@@ -238,7 +254,8 @@
 
         private System.Windows.Forms.Label lblPictureAdvice;
         private System.Windows.Forms.Label lblRawFileAdvice;
-        private System.Windows.Forms.Button btnRestoreSettings;
+        private System.Windows.Forms.Button btnFileExtensionCorrespondingRestore;
+        private System.Windows.Forms.Button btnFileExtensionRawRestore;
     }
 }
 
