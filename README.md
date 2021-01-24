@@ -33,7 +33,7 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on my code of conduct
 
 ## Versioning
 
-I use a versioning system similar [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/OliverKind/OLKI.Programme.RaMaDe/tags). 
+For the versions available, see the [tags on this repository](https://github.com/OliverKind/OLKI.Programme.RaMaDe/tags). 
 
 Versionnumber: a.b.c.d 
 
